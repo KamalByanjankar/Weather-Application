@@ -1,0 +1,21 @@
+.temp{
+    font-size: 54px;
+    padding: 0;
+    margin: 0;
+}
+
+.time{
+    color: gray;
+}
+
+.temperature__icon{
+    width: 80%;
+    filter: opacity(0.5) drop-shadow(0 0 0 blue);
+    margin-bottom: -50px;
+}
+
+.temperature__details{
+    position: absolute;
+    margin-left: 20px;
+    padding-left: 10px;
+}

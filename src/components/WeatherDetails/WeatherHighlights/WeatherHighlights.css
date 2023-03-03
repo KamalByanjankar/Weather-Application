@@ -1,0 +1,43 @@
+.weatherHighlights {
+    margin-left: 50px;
+}
+
+.weatherHightlights__header {
+    margin: 50px 0 20px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.weatherHighlights__details {
+    background-color: white;
+    width: 25%;
+    padding: 2px 0 2px 20px;
+    border-radius: 10px;
+    margin: 10px 50px 10px 0;
+    box-sizing: border-box;
+    height: 22vh;
+}
+
+.weatherHightlights__details__header {
+    color: gray;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.weatherHightlights__details__value {
+    font-size: 42px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.weatherHighlights__component {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.weatherHightlights__details__sun {
+    font-weight: 600;
+}

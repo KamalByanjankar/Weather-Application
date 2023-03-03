@@ -1,0 +1,36 @@
+.header{
+    margin: 30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dailyOrWeekly{
+    display: flex;
+}
+
+.dailyOrWeekly > p {
+    margin-right: 25px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.dailyOrWeekly > p:hover{
+    cursor: pointer;
+}
+
+.degree > button{
+    border: none;
+    margin: 0 5px;
+    font-size: 14px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-weight: 600;
+}
+
+.degree > button:hover{
+    cursor: pointer;
+    background-color: #404040;
+    color: white;
+}

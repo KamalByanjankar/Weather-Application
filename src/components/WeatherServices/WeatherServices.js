@@ -1,0 +1,41 @@
+import axios from "axios"
+
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
+const BASE_URL = "https://api.openweathermap.org/data/2.5" 
+
+const formatCurrentWeather = (data) => {
+  const {
+    coord: {lon, lat},
+    main: {temp, temp_max, temp_min, feels_like},
+    name,
+    dt,
+    sys: {country},
+    weather,
+  } = data.data;
+
+  const {main : description, icon} = weather[0]
+
+  return{
+    lat, lon, temp, temp_max, temp_min, feels_like, name, dt, country, weather, description, icon
+  }
+}
+
+
+const getFormattedWeatherData = async (query) => {
+
+    const formattedCurrentWeather = await axios.get(BASE_URL + `/weather?q=${query}&appid=${API_KEY}&units=metric`).then(formatCurrentWeather)
+  
+    const {lat, lon} = formattedCurrentWeather
+  
+    const formattedForecastWeather = await axios.get(BASE_URL + `/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=${API_KEY}&units=metric`)
+  
+    return { ...formattedCurrentWeather, ...formattedForecastWeather };
+};
+
+const iconUrlFromCode = (icon) =>
+  `http://openweathermap.org/img/wn/${icon}@2x.png`; 
+
+
+export default getFormattedWeatherData;
+
+export {iconUrlFromCode};
