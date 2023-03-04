@@ -18,11 +18,11 @@ function WeatherHighlights({
         <div className="weatherHighlights__component">
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Wind Status</p>
-                <p className="weatherHightlights__details__value">{speed}<sub>km/h</sub></p>
+                <p className="weatherHightlights__details__value">{speed} <sub>km/h</sub></p>
             </div>
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Humidity</p>
-                <p className="weatherHightlights__details__value">{humidity}<sup>%</sup></p>
+                <p className="weatherHightlights__details__value">{humidity} <sup>%</sup></p>
                 <p>Normal</p>
             </div>
             <div className="weatherHighlights__details">
@@ -41,7 +41,7 @@ function WeatherHighlights({
             </div>
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Pressure</p>
-                <p className="weatherHightlights__details__value">{pressure/1000}<sub>hPa</sub></p>
+                <p className="weatherHightlights__details__value">{pressure/1000} <sub>hPa</sub></p>
             </div>
         </div>
     </div>

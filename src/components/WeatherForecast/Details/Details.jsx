@@ -1,5 +1,5 @@
 import React from 'react'
-import {UilTemperaturePlus, UilTemperatureMinus, UilTemperatureEmpty} from "@iconscout/react-unicons"
+import {UilTemperaturePlus, UilTemperatureMinus} from "@iconscout/react-unicons"
 import './Details.css'
 import { iconUrlFromCode } from '../../WeatherServices/WeatherServices'
 

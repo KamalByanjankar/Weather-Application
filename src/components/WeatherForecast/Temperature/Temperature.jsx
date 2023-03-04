@@ -1,10 +1,13 @@
 import React from 'react'
-import { iconUrlFromCode } from '../../WeatherServices/WeatherServices'
+import { formatToLocalTime, iconUrlFromCode } from '../../WeatherServices/WeatherServices'
 import './Temperature.css'
 
 function Temperature({
   weather: {
-    icon, temp
+    icon,
+    temp, 
+    dt,
+    timezone,
   }
 }) {
   return (
@@ -16,7 +19,7 @@ function Temperature({
         />
         <div className="temperature__details">
             <p className="temp">{temp.toFixed()}°C</p>
-            <p className="day">Monday, <span className="time">16:00</span></p>
+            <p className="day">{formatToLocalTime(dt, timezone)}</p>
         </div>
     </div>
   )
