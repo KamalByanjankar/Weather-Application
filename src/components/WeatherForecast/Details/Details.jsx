@@ -9,7 +9,6 @@ function Details({
       description,
       temp_max,
       temp_min,
-      feels_like,
       name,
       country
     }
@@ -31,10 +30,6 @@ function Details({
             <div className="weather__details">
               <UilTemperatureMinus size={18}/>
               <p>Min Temperature : {temp_min.toFixed()}°</p>  
-            </div>
-            <div className="weather__details">
-              <UilTemperatureEmpty size={18}/>
-              <p>Feels like : {feels_like.toFixed()}°</p>
             </div>
         </div>
         <div className="weather__details weather__city">
