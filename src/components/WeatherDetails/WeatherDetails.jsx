@@ -4,12 +4,12 @@ import './WeatherDetails.css'
 import WeatherHighlights from './WeatherHighlights/WeatherHighlights'
 import WeeklyWeatherForecast from './WeeklyWeatherForecast/WeeklyWeatherForecast'
 
-function WeatherDetails() {
+function WeatherDetails({weather}) {
   return (
     <div className="weatherDetails">
         <Header />
         <WeeklyWeatherForecast />
-        <WeatherHighlights />
+        <WeatherHighlights weather={weather} />
     </div>
   )
 }
