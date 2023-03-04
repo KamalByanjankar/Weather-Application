@@ -5,7 +5,7 @@ const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 const BASE_URL = "https://api.openweathermap.org/data/2.5" 
 
 const formatCurrentWeather = (data) => {
-  console.log(data)
+  // console.log(data)
   const {
     coord: {lon, lat},
     main: {temp, temp_max, temp_min, feels_like, humidity, pressure},
@@ -21,7 +21,9 @@ const formatCurrentWeather = (data) => {
   const {description, icon} = weather[0]
 
   return{
-    lat, lon, temp, temp_max, temp_min, feels_like, humidity, pressure, sunrise, sunset, visibility, speed, name, dt, country, weather, description, icon, timezone
+    lat, lon, temp, temp_max, temp_min, feels_like, humidity, pressure, 
+    sunrise, sunset, visibility, speed, name, dt, country, weather, description, 
+    icon, timezone
   }
 }
 
@@ -37,7 +39,7 @@ const getFormattedWeatherData = async (query) => {
     return { ...formattedCurrentWeather, ...formattedForecastWeather };
 };
 
-const formatToLocalTime = (
+const getLocalTime = (
   secs,
   zone,
   // format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
@@ -50,4 +52,4 @@ const iconUrlFromCode = (icon) =>
 
 export default getFormattedWeatherData;
 
-export {formatToLocalTime, iconUrlFromCode};
+export {getLocalTime, iconUrlFromCode};

@@ -1,4 +1,5 @@
 import React from 'react'
+import { getLocalTime } from '../../WeatherServices/WeatherServices'
 import './WeatherHighlights.css'
 
 function WeatherHighlights({
@@ -10,6 +11,7 @@ function WeatherHighlights({
         sunrise, 
         sunset,
         feels_like,
+        timezone,
     }
 }) {
   return (
@@ -36,8 +38,8 @@ function WeatherHighlights({
             </div>
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Sunrise & Sunset</p>
-                <p className="weatherHightlights__details__sun">5:42 PM</p>
-                <p className="weatherHightlights__details__sun">6:35 AM</p>
+                <p className="weatherHightlights__details__sun">{getLocalTime(sunrise, timezone, "hh:mm a")}</p>
+                <p className="weatherHightlights__details__sun">{getLocalTime(sunset, timezone, "hh:mm a")}</p>
             </div>
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Pressure</p>
