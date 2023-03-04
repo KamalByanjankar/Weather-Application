@@ -1,22 +1,27 @@
 import axios from "axios"
+import { DateTime } from "luxon"
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 const BASE_URL = "https://api.openweathermap.org/data/2.5" 
 
 const formatCurrentWeather = (data) => {
+  console.log(data)
   const {
     coord: {lon, lat},
-    main: {temp, temp_max, temp_min, feels_like},
+    main: {temp, temp_max, temp_min, feels_like, humidity, pressure},
     name,
     dt,
-    sys: {country},
+    sys: {country, sunrise, sunset},
+    visibility,
     weather,
+    wind: {speed},
+    timezone
   } = data.data;
 
-  const {main : description, icon} = weather[0]
+  const {description, icon} = weather[0]
 
   return{
-    lat, lon, temp, temp_max, temp_min, feels_like, name, dt, country, weather, description, icon
+    lat, lon, temp, temp_max, temp_min, feels_like, humidity, pressure, sunrise, sunset, visibility, speed, name, dt, country, weather, description, icon, timezone
   }
 }
 
@@ -32,10 +37,17 @@ const getFormattedWeatherData = async (query) => {
     return { ...formattedCurrentWeather, ...formattedForecastWeather };
 };
 
+const formatToLocalTime = (
+  secs,
+  zone,
+  // format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
+  format = "cccc, hh:mm a"
+) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
+
 const iconUrlFromCode = (icon) =>
   `http://openweathermap.org/img/wn/${icon}@2x.png`; 
 
 
 export default getFormattedWeatherData;
 
-export {iconUrlFromCode};
+export {formatToLocalTime, iconUrlFromCode};
