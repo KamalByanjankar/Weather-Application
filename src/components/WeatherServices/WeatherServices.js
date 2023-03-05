@@ -5,7 +5,6 @@ const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 const BASE_URL = "https://api.openweathermap.org/data/2.5" 
 
 const formatCurrentWeather = (data) => {
-  // console.log(data)
   const {
     coord: {lon, lat},
     main: {temp, temp_max, temp_min, feels_like, humidity, pressure},
@@ -27,6 +26,11 @@ const formatCurrentWeather = (data) => {
   }
 }
 
+const formatdailyWeather = (data) => {
+  let { timezone, daily } = data.data;
+  return { timezone, daily }
+}
+
 
 const getFormattedWeatherData = async (query) => {
 
@@ -34,7 +38,7 @@ const getFormattedWeatherData = async (query) => {
   
     const {lat, lon} = formattedCurrentWeather
   
-    const formattedForecastWeather = await axios.get(BASE_URL + `/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=${API_KEY}&units=metric`)
+    const formattedForecastWeather = await axios.get(BASE_URL + `/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=${API_KEY}&units=metric`).then(formatdailyWeather)
   
     return { ...formattedCurrentWeather, ...formattedForecastWeather };
 };
