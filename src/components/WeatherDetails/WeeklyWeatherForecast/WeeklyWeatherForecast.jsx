@@ -1,17 +1,18 @@
 import React from 'react'
+import { getLocalTime, iconUrlFromCode } from '../../WeatherServices/WeatherServices'
 import './WeeklyWeatherForecast.css'
 
-function WeeklyWeatherForecast() {
+function WeeklyWeatherForecast({items}) {
     // console.log(items)
   return (
     <div className="weeklyWeatherForecast">
-        {/* {
-            items && items.map((item, i) => {
+        {
+            items && items.slice(1,8).map((item, i) => {
                 return(
                     <div className="weeklyWeatherForecast__component" key={i}>
-                        <p>{item.title}</p>
+                        <p>{getLocalTime(item.dt, item.timezone, "ccc")}</p>
                         <img
-                            src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                            src={iconUrlFromCode(item.weather[0].icon)}
                             className="icon"
                             alt=""
                             />
@@ -19,7 +20,7 @@ function WeeklyWeatherForecast() {
                     </div>
                 )
             })
-        } */}
+        }
     </div>
   )
 }

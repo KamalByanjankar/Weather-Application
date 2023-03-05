@@ -8,7 +8,7 @@ function WeatherDetails({weather}) {
   return (
     <div className="weatherDetails">
         <Header />
-        <WeeklyWeatherForecast />
+        <WeeklyWeatherForecast items={weather.daily}/>
         <WeatherHighlights weather={weather} />
     </div>
   )
