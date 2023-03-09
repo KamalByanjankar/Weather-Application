@@ -4,7 +4,7 @@
     justify-content: center;
 }
 
-.inputs > input{
+.input__field{
     width: 60%;
     padding: 5px 8px;
     outline: none;
