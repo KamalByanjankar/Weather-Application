@@ -26,6 +26,7 @@ function Inputs({ setQuery }) {
           placeholder='Search for places...' 
           value={city}
           onChange={(e) => setCity(e.target.value)}
+          className="input__field"
         />
       </form>
 

@@ -10,6 +10,8 @@ function App() {
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
+  console.log("The entered city is: ", query)
+
   useEffect(() => {
     const fetchWeather = async () => {
       await getWeatherData(query, units).then((data) => {
@@ -28,7 +30,7 @@ function App() {
       {
         weather && (
           <>
-            <WeatherForecast weather={weather}/>
+            <WeatherForecast weather={weather} setQuery={setQuery}/>
             <WeatherDetails weather = {weather} />
           </>
         )
