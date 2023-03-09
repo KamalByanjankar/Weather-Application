@@ -13,7 +13,9 @@ function Inputs({ setQuery }) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    setQuery(city)
+    if(city !== ""){
+      setQuery(city)
+    }
   }
 
   return (
