@@ -1,5 +1,5 @@
 import React from 'react'
-import { getLocalTime, iconUrlFromCode } from '../../WeatherServices/WeatherServices'
+import { getLocalTime, getIconFromUrl } from '../../WeatherServices/WeatherServices'
 import './Temperature.css'
 
 function Temperature({
@@ -13,7 +13,7 @@ function Temperature({
   return (
     <div className="temperature">
         <img
-          src={iconUrlFromCode(icon)}
+          src={getIconFromUrl(icon)}
           className="temperature__icon"
           alt=""
         />

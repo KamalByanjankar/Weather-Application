@@ -1,5 +1,5 @@
 import React from 'react'
-import { getLocalTime, iconUrlFromCode } from '../../WeatherServices/WeatherServices'
+import { getLocalTime, getIconFromUrl } from '../../WeatherServices/WeatherServices'
 import './WeeklyWeatherForecast.css'
 
 function WeeklyWeatherForecast({items}) {
@@ -12,7 +12,7 @@ function WeeklyWeatherForecast({items}) {
                     <div className="weeklyWeatherForecast__component" key={i}>
                         <p>{getLocalTime(item.dt, item.timezone, "ccc")}</p>
                         <img
-                            src={iconUrlFromCode(item.weather[0].icon)}
+                            src={getIconFromUrl(item.weather[0].icon)}
                             className="icon"
                             alt=""
                             />

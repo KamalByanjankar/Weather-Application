@@ -32,13 +32,13 @@ const formatdailyWeather = (data) => {
 }
 
 
-const getFormattedWeatherData = async (query) => {
+const getWeatherData = async (query, units) => {
 
-    const formattedCurrentWeather = await axios.get(BASE_URL + `/weather?q=${query}&appid=${API_KEY}&units=metric`).then(formatCurrentWeather)
+    const formattedCurrentWeather = await axios.get(BASE_URL + `/weather?q=${query}&appid=${API_KEY}&units=${units}`).then(formatCurrentWeather)
   
     const {lat, lon} = formattedCurrentWeather
   
-    const formattedForecastWeather = await axios.get(BASE_URL + `/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=${API_KEY}&units=metric`).then(formatdailyWeather)
+    const formattedForecastWeather = await axios.get(BASE_URL + `/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=${API_KEY}&units=${units}`).then(formatdailyWeather)
   
     return { ...formattedCurrentWeather, ...formattedForecastWeather };
 };
@@ -50,10 +50,10 @@ const getLocalTime = (
   format = "cccc, hh:mm a"
 ) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
-const iconUrlFromCode = (icon) =>
+const getIconFromUrl = (icon) =>
   `http://openweathermap.org/img/wn/${icon}@2x.png`; 
 
 
-export default getFormattedWeatherData;
+export default getWeatherData;
 
-export {getLocalTime, iconUrlFromCode};
+export {getLocalTime, getIconFromUrl};

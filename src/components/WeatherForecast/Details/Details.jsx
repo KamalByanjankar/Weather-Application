@@ -1,7 +1,7 @@
 import React from 'react'
 import {UilTemperaturePlus, UilTemperatureMinus} from "@iconscout/react-unicons"
 import './Details.css'
-import { iconUrlFromCode } from '../../WeatherServices/WeatherServices'
+import { getIconFromUrl } from '../../WeatherServices/WeatherServices'
 
 function Details({
   weather:{
@@ -17,7 +17,7 @@ function Details({
     <div className="details">
         <div className="weather__details">
           <img
-            src={iconUrlFromCode(icon)}
+            src={getIconFromUrl(icon)}
             alt=""
           />
           <p>{description}</p>

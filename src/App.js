@@ -2,25 +2,26 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import WeatherDetails from './components/WeatherDetails/WeatherDetails';
 import WeatherForecast from './components/WeatherForecast/WeatherForecast'
-import getFormattedWeatherData from './components/WeatherServices/WeatherServices';
+import getWeatherData from './components/WeatherServices/WeatherServices';
 
 function App() {
 
   const [query, setQuery] = useState("lisbon");
+  const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
-      await getFormattedWeatherData(query).then((data) => {
+      await getWeatherData(query, units).then((data) => {
 
         setWeather(data);
       });
     };
 
     fetchWeather();
-  }, [query]);
+  }, [query, units]);
 
-  console.log("The weather is ", weather)
+  // console.log("The weather is ", weather)
 
   return (
     <div className="app">
@@ -28,7 +29,7 @@ function App() {
         weather && (
           <>
             <WeatherForecast weather={weather}/>
-            <WeatherDetails />
+            <WeatherDetails weather = {weather} />
           </>
         )
       }
