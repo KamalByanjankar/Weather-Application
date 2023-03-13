@@ -9,6 +9,7 @@ function Inputs({ setQuery }) {
     if(city !== ""){
       setQuery(city)
     }
+    setCity("")
   }
 
   const handleFormSubmit = (e) => {
@@ -16,6 +17,7 @@ function Inputs({ setQuery }) {
     if(city !== ""){
       setQuery(city)
     }
+    setCity("")
   }
 
   return (
@@ -30,13 +32,16 @@ function Inputs({ setQuery }) {
         />
       </form>
 
-
-        <UilSearch 
-          size={20} 
-          className="icons"
-          onClick={handleSearchClick}
-        />
-        <UilLocationPoint size={20} className="icons"/>
+      <UilSearch 
+        size={20} 
+        className="icons"
+        onClick={handleSearchClick}
+      />
+      
+      <UilLocationPoint 
+        size={20} 
+        className="icons"
+      />
     </div>
   )
 }
