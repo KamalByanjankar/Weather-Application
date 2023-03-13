@@ -1,5 +1,6 @@
 import React from 'react'
 import { getLocalTime } from '../../WeatherServices/WeatherServices'
+import { UilSun,  UilSunset } from "@iconscout/react-unicons"
 import './WeatherHighlights.css'
 
 function WeatherHighlights({
@@ -25,7 +26,6 @@ function WeatherHighlights({
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Humidity</p>
                 <p className="weatherHightlights__details__value">{humidity} <sup>%</sup></p>
-                <p>Normal</p>
             </div>
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Visibility</p>
@@ -38,8 +38,14 @@ function WeatherHighlights({
             </div>
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Sunrise & Sunset</p>
-                <p className="weatherHightlights__details__sun">{getLocalTime(sunrise, timezone, "hh:mm a")}</p>
-                <p className="weatherHightlights__details__sun">{getLocalTime(sunset, timezone, "hh:mm a")}</p>
+                <div className="sunrise">
+                    <UilSun />
+                    <p className="weatherHightlights__details__sun">{getLocalTime(sunrise, timezone, "hh:mm a")}</p>
+                </div>
+                <div className="sunset">
+                    <UilSunset />
+                    <p className="weatherHightlights__details__sun">{getLocalTime(sunset, timezone, "hh:mm a")}</p>
+                </div>
             </div>
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Pressure</p>

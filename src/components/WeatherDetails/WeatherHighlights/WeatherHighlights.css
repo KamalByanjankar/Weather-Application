@@ -40,4 +40,10 @@
 
 .weatherHightlights__details__sun {
     font-weight: 600;
+    margin-left: 10px;
+}
+
+.sunrise, .sunset{
+    display: flex;
+    align-items: center;
 }
