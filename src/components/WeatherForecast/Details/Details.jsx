@@ -15,6 +15,10 @@ function Details({
   }) {
   return (
     <div className="details">
+        <hr style={{
+            margin: '0 0 30px 0',
+            padding: 0
+        }}/>
         <div className="weather__details">
           <img
             src={getIconFromUrl(icon)}

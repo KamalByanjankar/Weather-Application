@@ -1,5 +1,5 @@
 .details{
-    margin-top: 100px;
+    margin-top: 155px;
     padding: 20px;
 }
 .weather__details{
@@ -11,6 +11,7 @@
 .weather__details > img{
     width: 10%;
     filter: opacity(0.5) drop-shadow(0 0 0 blue);
+    margin-left: -5px;
 }
 
 .weather__details__temp{
@@ -33,7 +34,7 @@ p::first-letter {
 }
 
 .weather__city{
-    margin-top: 40px;
+    margin-top: 30px;
     font-size: 20px;
     display: grid;
     place-items: center;

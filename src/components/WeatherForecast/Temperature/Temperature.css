@@ -1,11 +1,7 @@
 .temp{
     font-size: 54px;
     padding: 0;
-    margin: 0;
-}
-
-.time{
-    color: gray;
+    margin: 10px 0 0 -46px;
 }
 
 .temperature__icon{

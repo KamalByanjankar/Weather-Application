@@ -23,7 +23,7 @@ function Temperature({
               {temp.toFixed()}
               {units === "metric" ? '°C' : '°F'}
             </p>
-            <p className="day">{getLocalTime(dt, timezone)}</p>
+            <p>{getLocalTime(dt, timezone)}</p>
         </div>
     </div>
   )
