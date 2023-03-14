@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 
-function Header() {
+function Header({units, setUnits}) {
+
+  const handleUnitChange = (e) => {
+    const unit = e.currentTarget.name;
+    if(units !== unit){
+      setUnits(unit)
+    }
+  }
+
   return (
     <div className="header">
         <div className="dailyOrWeekly">
@@ -10,8 +18,16 @@ function Header() {
         </div>
 
         <div className="degree">
-            <button>°C</button>
-            <button>°F</button>
+            <button
+              name="metric"
+              onClick={handleUnitChange}
+            >°C
+            </button>
+            <button
+              name="imperial"
+              onClick={handleUnitChange}
+              >°F
+            </button>
         </div>
     </div>
   )

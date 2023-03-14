@@ -6,11 +6,9 @@ import getWeatherData from './components/WeatherServices/WeatherServices';
 
 function App() {
 
-  const [query, setQuery] = useState("lisbon");
+  const [query, setQuery] = useState("frankfurt");
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
-
-  console.log("The entered city is: ", query)
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -31,7 +29,7 @@ function App() {
         weather && (
           <>
             <WeatherForecast weather={weather} setQuery={setQuery}/>
-            <WeatherDetails weather = {weather} />
+            <WeatherDetails weather = {weather} units={units} setUnits={setUnits}/>
           </>
         )
       }

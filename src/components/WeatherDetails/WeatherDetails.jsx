@@ -4,10 +4,10 @@ import './WeatherDetails.css'
 import WeatherHighlights from './WeatherHighlights/WeatherHighlights'
 import WeeklyWeatherForecast from './WeeklyWeatherForecast/WeeklyWeatherForecast'
 
-function WeatherDetails({weather}) {
+function WeatherDetails({weather, units, setUnits}) {
   return (
     <div className="weatherDetails">
-        <Header />
+        <Header units={units} setUnits={setUnits}/>
         <WeeklyWeatherForecast items={weather.daily}/>
         <WeatherHighlights weather={weather} />
     </div>
