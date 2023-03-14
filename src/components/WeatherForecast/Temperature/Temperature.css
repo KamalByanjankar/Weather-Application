@@ -9,7 +9,7 @@
 }
 
 .temperature__icon{
-    width: 70%;
+    width: 60%;
     filter: opacity(0.5) drop-shadow(0 0 0 blue);
     margin-bottom: -50px;
 }

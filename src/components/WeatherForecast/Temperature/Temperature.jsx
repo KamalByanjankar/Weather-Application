@@ -8,8 +8,9 @@ function Temperature({
     temp, 
     dt,
     timezone,
-  }
+  }, units
 }) {
+  console.log(units)
   return (
     <div className="temperature">
         <img
@@ -18,7 +19,10 @@ function Temperature({
           alt=""
         />
         <div className="temperature__details">
-            <p className="temp">{temp.toFixed()}°C</p>
+            <p className="temp">
+              {temp.toFixed()}
+              {units === "metric" ? '°C' : '°F'}
+            </p>
             <p className="day">{getLocalTime(dt, timezone)}</p>
         </div>
     </div>

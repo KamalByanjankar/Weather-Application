@@ -28,7 +28,7 @@ function App() {
       {
         weather && (
           <>
-            <WeatherForecast weather={weather} setQuery={setQuery}/>
+            <WeatherForecast weather={weather} setQuery={setQuery} units={units}/>
             <WeatherDetails weather = {weather} units={units} setUnits={setUnits}/>
           </>
         )

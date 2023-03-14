@@ -4,11 +4,11 @@ import Inputs from './Inputs/Inputs'
 import Temperature from './Temperature/Temperature'
 import './WeatherForecast.css'
 
-function WeatherForecast({weather, setQuery}) {
+function WeatherForecast({weather, setQuery, units}) {
   return (
     <div className="weatherforecast">
         <Inputs setQuery={setQuery}/>
-        <Temperature weather={weather} />
+        <Temperature weather={weather} units={units} />
         <Details weather={weather} />
     </div>
   )
