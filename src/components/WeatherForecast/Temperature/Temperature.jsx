@@ -10,7 +10,6 @@ function Temperature({
     timezone,
   }, units
 }) {
-  console.log(units)
   return (
     <div className="temperature">
         <img
