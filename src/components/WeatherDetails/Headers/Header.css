@@ -9,13 +9,16 @@
     display: flex;
 }
 
-.dailyOrWeekly > p {
-    margin-right: 25px;
+.dailyOrWeekly > button {
+    margin-right: 15px;
     font-size: 16px;
     font-weight: 600;
+    border: none;
+    background-color: transparent;
+    
 }
 
-.dailyOrWeekly > p:hover{
+.dailyOrWeekly > button:hover{
     cursor: pointer;
 }
 
@@ -33,4 +36,13 @@
     cursor: pointer;
     background-color: #404040;
     color: white;
+}
+
+.unit__select{
+    background: black;
+    color: white;
+}
+
+.option__select{
+    text-decoration: underline;
 }
