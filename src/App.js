@@ -6,13 +6,13 @@ import getWeatherData from './components/WeatherServices/WeatherServices';
 
 function App() {
 
-  const [query, setQuery] = useState("frankfurt");
+  const [query, setQuery] = useState({ q: "frankfurt"});
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
-      await getWeatherData(query, units).then((data) => {
+      await getWeatherData({...query, units}).then((data) => {
 
         setWeather(data);
       });
