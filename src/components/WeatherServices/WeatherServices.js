@@ -34,9 +34,25 @@ const formatCurrentWeather = (data) => {
 }
 
 const formatdailyWeather = (data) => {
-  let { timezone, daily } = data;
+  let { timezone, daily, hourly } = data;
 
-  return { timezone, daily }
+  daily = daily.slice(1,8).map((d) => {
+    return{
+      title: getLocalTime(d.dt, timezone, "ccc"),
+      temp: d.temp,
+      icon: d.weather[0].icon
+    }
+  })
+
+  hourly = hourly.slice(1,8).map((d) => {
+    return {
+      title: getLocalTime(d.dt, timezone, "HH:mm"),
+      temp: d.temp,
+      icon: d.weather[0].icon
+    }
+  })
+
+  return { timezone, daily, hourly }
 }
 
 
