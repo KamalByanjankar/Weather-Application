@@ -1,21 +1,20 @@
 import React from 'react'
-import { getLocalTime, getIconFromUrl } from '../../WeatherServices/WeatherServices'
+import { getIconFromUrl } from '../../WeatherServices/WeatherServices'
 import './WeeklyWeatherForecast.css'
 
-function WeeklyWeatherForecast({items}) {
-    // console.log(items)
+function WeeklyWeatherForecast({items, title}) {
   return (
     <div className="weeklyWeatherForecast">
         {
-            items && items.slice(1,8).map((item, i) => {
+            items && items.map((item, i) => {
                 return(
                     <div className="weeklyWeatherForecast__component" key={i}>
-                        <p>{getLocalTime(item.dt, item.timezone, "ccc")}</p>
+                        <p>{item.title}</p>
                         <img
-                            src={getIconFromUrl(item.weather[0].icon)}
+                            src={getIconFromUrl(item.icon)}
                             className="icon"
                             alt=""
-                            />
+                        />
                         <p>{item.temp.max.toFixed()}° <span className="min_temp">{item.temp.min.toFixed()}°</span></p>
                     </div>
                 )
