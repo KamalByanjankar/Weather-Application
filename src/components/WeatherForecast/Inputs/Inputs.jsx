@@ -20,6 +20,17 @@ function Inputs({ setQuery }) {
     setCity("")
   }
 
+  const handleLocation = () => {
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition((position) => {
+        let lat = position.coords.latitude
+        let lon = position.coords.longitude
+
+        setQuery({lat, lon})
+      })
+    }
+  }
+
   return (
     <div className="inputs">
       <form onSubmit={handleFormSubmit}>
@@ -41,6 +52,7 @@ function Inputs({ setQuery }) {
       <UilLocationPoint 
         size={20} 
         className="icons"
+        onClick={handleLocation}
       />
     </div>
   )
