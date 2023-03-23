@@ -7,7 +7,7 @@ function Inputs({ setQuery }) {
 
   const handleSearchClick = () => {
     if(city !== ""){
-      setQuery(city)
+      setQuery({q: city})
     }
     setCity("")
   }
@@ -15,7 +15,7 @@ function Inputs({ setQuery }) {
   const handleFormSubmit = (e) => {
     e.preventDefault()
     if(city !== ""){
-      setQuery(city)
+      setQuery({q: city})
     }
     setCity("")
   }
