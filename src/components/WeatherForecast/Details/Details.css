@@ -10,7 +10,7 @@
 
 .weather__details > img{
     width: 8%;
-    filter: opacity(0.5) drop-shadow(0 0 0 blue);
+    /* filter: opacity(0.5) drop-shadow(0 0 0 blue); */
     margin-left: -10px;
 }
 
