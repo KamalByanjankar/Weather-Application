@@ -1,4 +1,18 @@
 .weatherforecast{
     width: 30%;
     text-align: center;
+    font-weight: bold;
+}
+
+.day{
+    background-image: url("../../assests/day.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.night{
+    background-image: url("../../assests/night.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
