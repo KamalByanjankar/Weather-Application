@@ -4,15 +4,25 @@
     font-weight: bold;
 }
 
-.day{
-    background-image: url("../../assests/day.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.night{
-    background-image: url("../../assests/night.png");
+.dayfewclouds{
+    background-image: url("../../assests/daycloudy.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.dayrainfall{
+    background-image: url("../../assests/dayrainfall.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.sunnyday{
+    background-image: url("../../assests/sunnyDay.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
 }
