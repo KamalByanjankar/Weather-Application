@@ -8,17 +8,27 @@ function WeatherForecast({weather, setQuery, units}) {
   const description = weather.description;
   var weatherName;
   switch(description){
-    case ("clear sky"):
+    case "clear sky":
       weatherName = "weatherforecast sunnyday"
       break;
-    case ("few clouds"):
-    case ("broken clouds"):
-    case ("scattered clouds"):
+      
+    case "few clouds":
+    case "broken clouds":
+    case "scattered clouds":
+    case "overcast clouds":
       weatherName = "weatherforecast dayfewclouds"
       break;
-    case ("light rain"):
+
+    case "light rain":
+    case "shower rain":
+    case "moderate rain":
       weatherName = "weatherforecast dayrainfall"
       break;
+
+    case "thunderstorm with rain":
+      weatherName = "weatherforecast thunderstorm"
+      break;
+
     default:
       weatherName = "weatherforecast"
   }
