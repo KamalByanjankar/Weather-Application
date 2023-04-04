@@ -34,3 +34,11 @@
     background-position: center;
     color: white;
 }
+
+.hazysky{
+    background-image: url("../../assests/hazySky.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}

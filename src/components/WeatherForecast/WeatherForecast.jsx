@@ -29,6 +29,10 @@ function WeatherForecast({weather, setQuery, units}) {
       weatherName = "weatherforecast thunderstorm"
       break;
 
+    case "haze":
+      weatherName="weatherforecast hazysky"
+      break;
+
     default:
       weatherName = "weatherforecast"
   }
