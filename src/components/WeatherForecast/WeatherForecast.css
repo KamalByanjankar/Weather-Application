@@ -42,3 +42,10 @@
     background-position: center;
     color: white;
 }
+
+.snowfall{
+    background-image: url("../../assests/snowfall.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
