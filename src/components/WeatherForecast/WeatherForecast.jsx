@@ -3,43 +3,58 @@ import Details from './Details/Details'
 import Inputs from './Inputs/Inputs'
 import Temperature from './Temperature/Temperature'
 import './WeatherForecast.css'
+import { getLocalTime } from '../WeatherServices/WeatherServices'
 
 function WeatherForecast({weather, setQuery, units}) {
   const description = weather.description;
+
+  const sunriseTime = getLocalTime(weather.sunrise, weather.timezone, "HH:MM")
+  const sunsetTime = getLocalTime(weather.sunset, weather.timezone, "HH:MM")
+
+  var today = new Date();
+  var currentTime = today.getHours() + ":" + today.getMinutes();
+  // const currentTime = "20:06"
+
   var weatherName;
-  switch(description){
-    case "clear sky":
-      weatherName = "weatherforecast sunnyday"
-      break;
-      
-    case "few clouds":
-    case "broken clouds":
-    case "scattered clouds":
-    case "overcast clouds":
-      weatherName = "weatherforecast dayfewclouds"
-      break;
+  if(sunriseTime <= currentTime && currentTime <= sunsetTime){
+    switch(description){
+      case "clear sky":
+        weatherName = "weatherforecast sunnyday"
+        break;
+        
+      case "few clouds":
+      case "broken clouds":
+      case "scattered clouds":
+      case "overcast clouds":
+        weatherName = "weatherforecast dayfewclouds"
+        break;
 
-    case "light rain":
-    case "shower rain":
-    case "moderate rain":
-      weatherName = "weatherforecast dayrainfall"
-      break;
+      case "light rain":
+      case "shower rain":
+      case "moderate rain":
+        weatherName = "weatherforecast dayrainfall"
+        break;
 
-    case "thunderstorm with rain":
-      weatherName = "weatherforecast thunderstorm"
-      break;
+      case "thunderstorm with rain":
+        weatherName = "weatherforecast thunderstorm"
+        break;
 
-    case "haze":
-      weatherName="weatherforecast hazysky"
-      break;
+      case "haze":
+        weatherName="weatherforecast hazysky"
+        break;
 
-    case "snowfall":
-      weatherName="weatherforecast snowfall"
-      break;
+      case "snowfall":
+        weatherName="weatherforecast snowfall"
+        break;
 
-    default:
-      weatherName = "weatherforecast"
+      default:
+        weatherName = "weatherforecast"
+    }
   }
+  else{
+    weatherName = "weatherforecast night"
+  }
+
   return (
     <div className={weatherName}>
       <Inputs setQuery={setQuery}/>
