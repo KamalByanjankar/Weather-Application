@@ -49,3 +49,11 @@
     background-size: cover;
     background-position: center;
 }
+
+.night{
+    background-image: url("../../assests/clearNight.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
