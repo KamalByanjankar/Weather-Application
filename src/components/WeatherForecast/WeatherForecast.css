@@ -57,3 +57,11 @@
     background-position: center;
     color: white;
 }
+
+.nightCloudy{
+    background-image: url("../../assests/nightcloudy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}

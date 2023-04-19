@@ -52,7 +52,18 @@ function WeatherForecast({weather, setQuery, units}) {
     }
   }
   else{
-    weatherName = "weatherforecast night"
+    switch(description){
+      case "clear sky":
+        weatherName = "weatherforecast night"
+        break;
+      
+      case "few clouds":
+        weatherName = "weatherforecast nightCloudy"
+        break;
+
+      default:
+        weatherName="weatherforecast"
+    }
   }
 
   return (
