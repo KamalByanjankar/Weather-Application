@@ -2,66 +2,46 @@
     width: 30%;
     text-align: center;
     font-weight: bold;
-}
-
-.dayfewclouds{
-    background-image: url("../../assests/daycloudy.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    color: white;
+}
+
+
+
+.dayfewclouds{
+    background-image: url("../../assests/daycloudy.gif");
 }
 
 .dayrainfall{
     background-image: url("../../assests/dayrainfall.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: white;
 }
 
 .sunnyday{
     background-image: url("../../assests/sunnyDay.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: white;
 }
 
 .thunderstorm{
     background-image: url("../../assests/thunderstorm.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: white;
 }
 
 .hazysky{
     background-image: url("../../assests/hazySky.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: white;
 }
 
 .snowfall{
     background-image: url("../../assests/snowfall.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 .night{
     background-image: url("../../assests/clearNight.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: white;
 }
 
 .nightCloudy{
     background-image: url("../../assests/nightcloudy.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: white;
+}
+
+.nightrainfall{
+    background-image: url("../../assests/nightrainy.gif");
 }

@@ -58,7 +58,16 @@ function WeatherForecast({weather, setQuery, units}) {
         break;
       
       case "few clouds":
+      case "broken clouds":
+      case "scattered clouds":
+      case "overcast clouds":
         weatherName = "weatherforecast nightCloudy"
+        break;
+
+      case "light rain":
+      case "shower rain":
+      case "moderate rain":
+        weatherName = "weatherforecast nightrainfall"
         break;
 
       default:
