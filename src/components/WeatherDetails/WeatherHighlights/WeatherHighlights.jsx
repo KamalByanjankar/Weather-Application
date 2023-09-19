@@ -30,7 +30,6 @@ function WeatherHighlights({
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Visibility</p>
                 <p className="weatherHightlights__details__value">{visibility/1000} <sub>km</sub></p>
-                <p>Average</p>
             </div>
             <div className="weatherHighlights__details">
                 <p className="weatherHightlights__details__header">Feels like</p>
